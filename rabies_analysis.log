@@ -1,0 +1,479 @@
+250227-05:31:03,188 nipype.workflow INFO:
+	 Running RABIES - version: 0.5.1
+250227-05:31:03,197 nipype.workflow INFO:
+	 CLI INPUTS: 
+-> rabies_stage = analysis 
+-> inclusion_ids = ['all'] 
+-> exclusion_ids = ['none'] 
+-> plugin = MultiProc 
+-> local_threads = 6 
+-> scale_min_memory = 1.0 
+-> min_proc = 1 
+-> figure_format = png 
+-> verbose = 1 
+-> force = False 
+-> confound_correction_out = /data/conf_out 
+-> output_dir = /data/analysis_out 
+-> prior_maps = /home/mambauser/.local/share/rabies/melodic_IC.nii.gz 
+-> prior_bold_idx = [5, 12, 19] 
+-> prior_confound_idx = [0, 2, 6, 7, 8, 9, 10, 11, 13, 14, 21, 22, 24, 26, 28, 29] 
+-> data_diagnosis = True 
+-> scan_QC_thresholds = {} 
+-> outlier_threshold = 3.5 
+-> extended_QC = True 
+-> seed_list = [] 
+-> seed_prior_list = [] 
+-> FC_matrix = True 
+-> ROI_type = parcellated 
+-> ROI_csv = /home/mambauser/.local/share/rabies/DSURQE_40micron_labels.nii.gz 
+-> group_ica = {'apply': True, 'dim': 0, 'random_seed': 1} 
+-> DR_ICA = True 
+-> NPR_temporal_comp = -1 
+-> NPR_spatial_comp = -1 
+-> optimize_NPR = {'apply': False, 'window_size': 5, 'min_prior_corr': 0.5, 'diff_thresh': 0.03, 'max_iter': 20, 'compute_max': False} 
+-> network_weighting = absolute 
+
+250227-05:31:05,290 nipype.utils WARNING:
+	 A newer version (1.8.4) of nipy/nipype is available. You are using 1.6.1
+250227-05:31:05,319 nipype.workflow INFO:
+	 Running workflow with MultiProc plugin.
+250227-05:31:05,468 nipype.workflow INFO:
+	 Workflow analysis_main_wf settings: ['check', 'execution', 'logging', 'monitoring']
+250227-05:31:05,572 nipype.workflow INFO:
+	 Running in parallel.
+250227-05:31:05,576 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 4 jobs ready. Free memory (GB): 56.28/56.28, Free processors: 6/6.
+250227-05:31:05,641 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.load_maps_dict_node" in "/data/analysis_out/analysis_main_wf/load_maps_dict_node".
+250227-05:31:05,650 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.conf_outputnode" in "/data/analysis_out/analysis_main_wf/_split_name_sub-10_ses-1_bold/conf_outputnode".
+250227-05:31:05,655 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.conf_outputnode" in "/data/analysis_out/analysis_main_wf/_split_name_sub-9_ses-1_bold/conf_outputnode".
+250227-05:31:05,653 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.conf_outputnode" in "/data/analysis_out/analysis_main_wf/_split_name_sub-12_ses-1_bold/conf_outputnode".
+250227-05:31:05,726 nipype.workflow INFO:
+	 [Node] Running "load_maps_dict_node" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:06,63 nipype.workflow INFO:
+	 [Node] Running "conf_outputnode" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:06,161 nipype.workflow INFO:
+	 [Node] Running "conf_outputnode" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:06,247 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.conf_outputnode".
+250227-05:31:06,289 nipype.workflow INFO:
+	 [Node] Running "conf_outputnode" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:06,340 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.conf_outputnode".
+250227-05:31:06,466 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.conf_outputnode".
+250227-05:31:07,579 nipype.workflow INFO:
+	 [Job 1] Completed (analysis_main_wf.conf_outputnode).
+250227-05:31:07,587 nipype.workflow INFO:
+	 [Job 2] Completed (analysis_main_wf.conf_outputnode).
+250227-05:31:07,591 nipype.workflow INFO:
+	 [Job 3] Completed (analysis_main_wf.conf_outputnode).
+250227-05:31:07,600 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 56.08/56.28, Free processors: 5/6.
+                     Currently running:
+                       * analysis_main_wf.load_maps_dict_node
+250227-05:31:07,665 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.analysis_split_joinnode" in "/data/analysis_out/analysis_main_wf/analysis_split_joinnode".
+250227-05:31:07,981 nipype.workflow INFO:
+	 [Node] Running "analysis_split_joinnode" ("nipype.interfaces.utility.base.IdentityInterface")
+250227-05:31:08,45 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.analysis_split_joinnode".
+250227-05:31:09,580 nipype.workflow INFO:
+	 [Job 7] Completed (analysis_main_wf.analysis_split_joinnode).
+250227-05:31:09,583 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 56.08/56.28, Free processors: 5/6.
+                     Currently running:
+                       * analysis_main_wf.load_maps_dict_node
+250227-05:31:09,635 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.analysis_wf.group_ICA" in "/data/analysis_out/analysis_main_wf/analysis_wf/group_ICA".
+250227-05:31:09,753 nipype.workflow INFO:
+	 [Node] Running "group_ICA" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:11,583 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 0 jobs ready. Free memory (GB): 55.08/56.28, Free processors: 4/6.
+                     Currently running:
+                       * analysis_main_wf.analysis_wf.group_ICA
+                       * analysis_main_wf.load_maps_dict_node
+250227-05:31:22,752 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.load_maps_dict_node".
+250227-05:31:23,592 nipype.workflow INFO:
+	 [Job 0] Completed (analysis_main_wf.load_maps_dict_node).
+250227-05:31:23,600 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 3 jobs ready. Free memory (GB): 55.28/56.28, Free processors: 5/6.
+                     Currently running:
+                       * analysis_main_wf.analysis_wf.group_ICA
+250227-05:31:23,659 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.load_sub_dict_node" in "/data/analysis_out/analysis_main_wf/_split_name_sub-10_ses-1_bold/load_sub_dict_node".
+250227-05:31:23,663 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.load_sub_dict_node" in "/data/analysis_out/analysis_main_wf/_split_name_sub-9_ses-1_bold/load_sub_dict_node".
+250227-05:31:23,661 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.load_sub_dict_node" in "/data/analysis_out/analysis_main_wf/_split_name_sub-12_ses-1_bold/load_sub_dict_node".
+250227-05:31:24,891 nipype.workflow INFO:
+	 [Node] Running "load_sub_dict_node" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:24,893 nipype.workflow INFO:
+	 [Node] Running "load_sub_dict_node" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:24,968 nipype.workflow INFO:
+	 [Node] Running "load_sub_dict_node" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:25,595 nipype.workflow INFO:
+	 [MultiProc] Running 4 tasks, and 0 jobs ready. Free memory (GB): 54.68/56.28, Free processors: 2/6.
+                     Currently running:
+                       * analysis_main_wf.load_sub_dict_node
+                       * analysis_main_wf.load_sub_dict_node
+                       * analysis_main_wf.load_sub_dict_node
+                       * analysis_main_wf.analysis_wf.group_ICA
+250227-05:31:27,232 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.analysis_wf.group_ICA".
+250227-05:31:27,596 nipype.workflow INFO:
+	 [Job 14] Completed (analysis_main_wf.analysis_wf.group_ICA).
+250227-05:31:27,601 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 0 jobs ready. Free memory (GB): 55.68/56.28, Free processors: 3/6.
+                     Currently running:
+                       * analysis_main_wf.load_sub_dict_node
+                       * analysis_main_wf.load_sub_dict_node
+                       * analysis_main_wf.load_sub_dict_node
+250227-05:31:28,307 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.load_sub_dict_node".
+250227-05:31:29,353 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.load_sub_dict_node".
+250227-05:31:29,354 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.load_sub_dict_node".
+250227-05:31:29,598 nipype.workflow INFO:
+	 [Job 4] Completed (analysis_main_wf.load_sub_dict_node).
+250227-05:31:29,606 nipype.workflow INFO:
+	 [Job 5] Completed (analysis_main_wf.load_sub_dict_node).
+250227-05:31:29,610 nipype.workflow INFO:
+	 [Job 6] Completed (analysis_main_wf.load_sub_dict_node).
+250227-05:31:29,614 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 6 jobs ready. Free memory (GB): 56.28/56.28, Free processors: 6/6.
+250227-05:31:29,667 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.analysis_wf.DR_ICA" in "/data/analysis_out/analysis_main_wf/analysis_wf/_split_name_sub-10_ses-1_bold/DR_ICA".
+250227-05:31:29,674 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.analysis_wf.DR_ICA" in "/data/analysis_out/analysis_main_wf/analysis_wf/_split_name_sub-12_ses-1_bold/DR_ICA".
+250227-05:31:29,677 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.analysis_wf.FC_matrix" in "/data/analysis_out/analysis_main_wf/analysis_wf/_split_name_sub-12_ses-1_bold/FC_matrix".
+250227-05:31:29,670 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.analysis_wf.FC_matrix" in "/data/analysis_out/analysis_main_wf/analysis_wf/_split_name_sub-10_ses-1_bold/FC_matrix".
+250227-05:31:29,680 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.analysis_wf.FC_matrix" in "/data/analysis_out/analysis_main_wf/analysis_wf/_split_name_sub-9_ses-1_bold/FC_matrix".
+250227-05:31:29,679 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.analysis_wf.DR_ICA" in "/data/analysis_out/analysis_main_wf/analysis_wf/_split_name_sub-9_ses-1_bold/DR_ICA".
+250227-05:31:30,79 nipype.workflow INFO:
+	 [Node] Running "FC_matrix" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:30,88 nipype.workflow INFO:
+	 [Node] Running "DR_ICA" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:30,81 nipype.workflow INFO:
+	 [Node] Running "DR_ICA" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:30,170 nipype.workflow INFO:
+	 [Node] Running "FC_matrix" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:30,213 nipype.workflow INFO:
+	 [Node] Running "FC_matrix" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:30,324 nipype.workflow INFO:
+	 [Node] Running "DR_ICA" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:31,601 nipype.workflow INFO:
+	 [MultiProc] Running 6 tasks, and 0 jobs ready. Free memory (GB): 50.28/56.28, Free processors: 0/6.
+                     Currently running:
+                       * analysis_main_wf.analysis_wf.FC_matrix
+                       * analysis_main_wf.analysis_wf.DR_ICA
+                       * analysis_main_wf.analysis_wf.FC_matrix
+                       * analysis_main_wf.analysis_wf.DR_ICA
+                       * analysis_main_wf.analysis_wf.FC_matrix
+                       * analysis_main_wf.analysis_wf.DR_ICA
+250227-05:31:31,964 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.analysis_wf.FC_matrix".
+250227-05:31:32,24 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.analysis_wf.FC_matrix".
+250227-05:31:32,77 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.analysis_wf.FC_matrix".
+250227-05:31:33,602 nipype.workflow INFO:
+	 [Job 9] Completed (analysis_main_wf.analysis_wf.FC_matrix).
+250227-05:31:33,606 nipype.workflow INFO:
+	 [Job 11] Completed (analysis_main_wf.analysis_wf.FC_matrix).
+250227-05:31:33,609 nipype.workflow INFO:
+	 [Job 13] Completed (analysis_main_wf.analysis_wf.FC_matrix).
+250227-05:31:33,613 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 0 jobs ready. Free memory (GB): 53.28/56.28, Free processors: 3/6.
+                     Currently running:
+                       * analysis_main_wf.analysis_wf.DR_ICA
+                       * analysis_main_wf.analysis_wf.DR_ICA
+                       * analysis_main_wf.analysis_wf.DR_ICA
+250227-05:31:34,499 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.analysis_wf.DR_ICA".
+250227-05:31:34,950 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.analysis_wf.DR_ICA".
+250227-05:31:35,138 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.analysis_wf.DR_ICA".
+250227-05:31:35,605 nipype.workflow INFO:
+	 [Job 8] Completed (analysis_main_wf.analysis_wf.DR_ICA).
+250227-05:31:35,615 nipype.workflow INFO:
+	 [Job 10] Completed (analysis_main_wf.analysis_wf.DR_ICA).
+250227-05:31:35,620 nipype.workflow INFO:
+	 [Job 12] Completed (analysis_main_wf.analysis_wf.DR_ICA).
+250227-05:31:35,624 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 6 jobs ready. Free memory (GB): 56.28/56.28, Free processors: 6/6.
+250227-05:31:35,679 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.analysis_prep_analysis_dict" in "/data/analysis_out/analysis_main_wf/_split_name_sub-10_ses-1_bold/analysis_prep_analysis_dict".
+250227-05:31:35,687 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.analysis_prep_analysis_dict" in "/data/analysis_out/analysis_main_wf/_split_name_sub-9_ses-1_bold/analysis_prep_analysis_dict".
+250227-05:31:35,691 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.analysis_datasink" in "/data/analysis_out/analysis_main_wf/_split_name_sub-10_ses-1_bold/analysis_datasink".
+250227-05:31:35,694 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.analysis_datasink" in "/data/analysis_out/analysis_main_wf/_split_name_sub-12_ses-1_bold/analysis_datasink".
+250227-05:31:35,695 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.analysis_datasink" in "/data/analysis_out/analysis_main_wf/_split_name_sub-9_ses-1_bold/analysis_datasink".
+250227-05:31:35,734 nipype.workflow INFO:
+	 [Node] Running "analysis_prep_analysis_dict" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:35,768 nipype.workflow INFO:
+	 [Node] Running "analysis_datasink" ("nipype.interfaces.io.DataSink")
+250227-05:31:35,773 nipype.workflow INFO:
+	 [Node] Running "analysis_datasink" ("nipype.interfaces.io.DataSink")
+250227-05:31:35,776 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.analysis_prep_analysis_dict".
+250227-05:31:35,779 nipype.workflow INFO:
+	 [Node] Running "analysis_datasink" ("nipype.interfaces.io.DataSink")
+250227-05:31:35,735 nipype.workflow INFO:
+	 [Node] Running "analysis_prep_analysis_dict" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:35,833 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.analysis_prep_analysis_dict".
+250227-05:31:35,682 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.analysis_prep_analysis_dict" in "/data/analysis_out/analysis_main_wf/_split_name_sub-12_ses-1_bold/analysis_prep_analysis_dict".
+250227-05:31:35,871 nipype.workflow INFO:
+	 [Node] Running "analysis_prep_analysis_dict" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:35,915 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.analysis_prep_analysis_dict".
+250227-05:31:36,135 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.analysis_datasink".
+250227-05:31:36,149 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.analysis_datasink".
+250227-05:31:36,242 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.analysis_datasink".
+250227-05:31:37,607 nipype.workflow INFO:
+	 [Job 15] Completed (analysis_main_wf.analysis_prep_analysis_dict).
+250227-05:31:37,612 nipype.workflow INFO:
+	 [Job 16] Completed (analysis_main_wf.analysis_prep_analysis_dict).
+250227-05:31:37,616 nipype.workflow INFO:
+	 [Job 17] Completed (analysis_main_wf.analysis_prep_analysis_dict).
+250227-05:31:37,619 nipype.workflow INFO:
+	 [Job 18] Completed (analysis_main_wf.analysis_datasink).
+250227-05:31:37,621 nipype.workflow INFO:
+	 [Job 19] Completed (analysis_main_wf.analysis_datasink).
+250227-05:31:37,624 nipype.workflow INFO:
+	 [Job 20] Completed (analysis_main_wf.analysis_datasink).
+250227-05:31:37,628 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 3 jobs ready. Free memory (GB): 56.28/56.28, Free processors: 6/6.
+250227-05:31:37,677 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.diagnosis_wf.ScanDiagnosis" in "/data/analysis_out/analysis_main_wf/diagnosis_wf/_split_name_sub-10_ses-1_bold/ScanDiagnosis".
+250227-05:31:37,678 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.diagnosis_wf.ScanDiagnosis" in "/data/analysis_out/analysis_main_wf/diagnosis_wf/_split_name_sub-12_ses-1_bold/ScanDiagnosis".
+250227-05:31:37,679 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.diagnosis_wf.ScanDiagnosis" in "/data/analysis_out/analysis_main_wf/diagnosis_wf/_split_name_sub-9_ses-1_bold/ScanDiagnosis".
+250227-05:31:38,19 nipype.workflow INFO:
+	 [Node] Running "ScanDiagnosis" ("rabies.analysis_pkg.diagnosis_pkg.interfaces.ScanDiagnosis")
+250227-05:31:38,167 nipype.workflow INFO:
+	 [Node] Running "ScanDiagnosis" ("rabies.analysis_pkg.diagnosis_pkg.interfaces.ScanDiagnosis")
+250227-05:31:38,700 nipype.workflow INFO:
+	 [Node] Running "ScanDiagnosis" ("rabies.analysis_pkg.diagnosis_pkg.interfaces.ScanDiagnosis")
+250227-05:31:39,609 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 0 jobs ready. Free memory (GB): 55.68/56.28, Free processors: 3/6.
+                     Currently running:
+                       * analysis_main_wf.diagnosis_wf.ScanDiagnosis
+                       * analysis_main_wf.diagnosis_wf.ScanDiagnosis
+                       * analysis_main_wf.diagnosis_wf.ScanDiagnosis
+250227-05:31:46,600 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.diagnosis_wf.ScanDiagnosis".
+250227-05:31:46,710 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.diagnosis_wf.ScanDiagnosis".
+250227-05:31:47,207 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.diagnosis_wf.ScanDiagnosis".
+250227-05:31:47,615 nipype.workflow INFO:
+	 [Job 21] Completed (analysis_main_wf.diagnosis_wf.ScanDiagnosis).
+250227-05:31:47,625 nipype.workflow INFO:
+	 [Job 22] Completed (analysis_main_wf.diagnosis_wf.ScanDiagnosis).
+250227-05:31:47,629 nipype.workflow INFO:
+	 [Job 23] Completed (analysis_main_wf.diagnosis_wf.ScanDiagnosis).
+250227-05:31:47,632 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 9 jobs ready. Free memory (GB): 56.28/56.28, Free processors: 6/6.
+250227-05:31:47,684 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.diagnosis_wf.temporal_external_formating" in "/data/analysis_out/analysis_main_wf/diagnosis_wf/_split_name_sub-10_ses-1_bold/temporal_external_formating".
+250227-05:31:47,688 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.diagnosis_wf.spatial_external_formating" in "/data/analysis_out/analysis_main_wf/diagnosis_wf/_split_name_sub-10_ses-1_bold/spatial_external_formating".
+250227-05:31:47,694 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.diagnosis_wf.temporal_external_formating" in "/data/analysis_out/analysis_main_wf/diagnosis_wf/_split_name_sub-12_ses-1_bold/temporal_external_formating".
+250227-05:31:47,696 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.diagnosis_wf.prep_scan_data_node" in "/data/analysis_out/analysis_main_wf/diagnosis_wf/_split_name_sub-12_ses-1_bold/prep_scan_data_node".
+250227-05:31:47,691 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.diagnosis_wf.prep_scan_data_node" in "/data/analysis_out/analysis_main_wf/diagnosis_wf/_split_name_sub-10_ses-1_bold/prep_scan_data_node".
+250227-05:31:47,695 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.diagnosis_wf.spatial_external_formating" in "/data/analysis_out/analysis_main_wf/diagnosis_wf/_split_name_sub-12_ses-1_bold/spatial_external_formating".
+250227-05:31:48,322 nipype.workflow INFO:
+	 [Node] Running "temporal_external_formating" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:48,357 nipype.workflow INFO:
+	 [Node] Running "temporal_external_formating" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:48,435 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.diagnosis_wf.temporal_external_formating".
+250227-05:31:48,459 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.diagnosis_wf.temporal_external_formating".
+250227-05:31:49,461 nipype.workflow INFO:
+	 [Node] Running "spatial_external_formating" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:49,475 nipype.workflow INFO:
+	 [Node] Running "spatial_external_formating" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:49,616 nipype.workflow INFO:
+	 [Job 24] Completed (analysis_main_wf.diagnosis_wf.temporal_external_formating).
+250227-05:31:49,620 nipype.workflow INFO:
+	 [Job 27] Completed (analysis_main_wf.diagnosis_wf.temporal_external_formating).
+250227-05:31:49,624 nipype.workflow INFO:
+	 [MultiProc] Running 4 tasks, and 3 jobs ready. Free memory (GB): 55.48/56.28, Free processors: 2/6.
+                     Currently running:
+                       * analysis_main_wf.diagnosis_wf.prep_scan_data_node
+                       * analysis_main_wf.diagnosis_wf.spatial_external_formating
+                       * analysis_main_wf.diagnosis_wf.prep_scan_data_node
+                       * analysis_main_wf.diagnosis_wf.spatial_external_formating
+250227-05:31:49,674 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.diagnosis_wf.temporal_external_formating" in "/data/analysis_out/analysis_main_wf/diagnosis_wf/_split_name_sub-9_ses-1_bold/temporal_external_formating".
+250227-05:31:49,675 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.diagnosis_wf.spatial_external_formating" in "/data/analysis_out/analysis_main_wf/diagnosis_wf/_split_name_sub-9_ses-1_bold/spatial_external_formating".
+250227-05:31:49,812 nipype.workflow INFO:
+	 [Node] Running "prep_scan_data_node" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:49,950 nipype.workflow INFO:
+	 [Node] Running "prep_scan_data_node" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:50,335 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.diagnosis_wf.spatial_external_formating".
+250227-05:31:50,358 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.diagnosis_wf.spatial_external_formating".
+250227-05:31:50,552 nipype.workflow INFO:
+	 [Node] Running "temporal_external_formating" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:50,701 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.diagnosis_wf.temporal_external_formating".
+250227-05:31:51,157 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.diagnosis_wf.prep_scan_data_node".
+250227-05:31:51,165 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.diagnosis_wf.prep_scan_data_node".
+250227-05:31:51,392 nipype.workflow INFO:
+	 [Node] Running "spatial_external_formating" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:51,618 nipype.workflow INFO:
+	 [Job 25] Completed (analysis_main_wf.diagnosis_wf.spatial_external_formating).
+250227-05:31:51,622 nipype.workflow INFO:
+	 [Job 26] Completed (analysis_main_wf.diagnosis_wf.prep_scan_data_node).
+250227-05:31:51,626 nipype.workflow INFO:
+	 [Job 28] Completed (analysis_main_wf.diagnosis_wf.spatial_external_formating).
+250227-05:31:51,630 nipype.workflow INFO:
+	 [Job 29] Completed (analysis_main_wf.diagnosis_wf.prep_scan_data_node).
+250227-05:31:51,633 nipype.workflow INFO:
+	 [Job 30] Completed (analysis_main_wf.diagnosis_wf.temporal_external_formating).
+250227-05:31:51,636 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 56.08/56.28, Free processors: 5/6.
+                     Currently running:
+                       * analysis_main_wf.diagnosis_wf.spatial_external_formating
+250227-05:31:51,683 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.diagnosis_wf.prep_scan_data_node" in "/data/analysis_out/analysis_main_wf/diagnosis_wf/_split_name_sub-9_ses-1_bold/prep_scan_data_node".
+250227-05:31:52,341 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.diagnosis_wf.spatial_external_formating".
+250227-05:31:53,430 nipype.workflow INFO:
+	 [Node] Running "prep_scan_data_node" ("nipype.interfaces.utility.wrappers.Function")
+250227-05:31:53,620 nipype.workflow INFO:
+	 [Job 31] Completed (analysis_main_wf.diagnosis_wf.spatial_external_formating).
+250227-05:31:53,623 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 0 jobs ready. Free memory (GB): 56.08/56.28, Free processors: 5/6.
+                     Currently running:
+                       * analysis_main_wf.diagnosis_wf.prep_scan_data_node
+250227-05:31:54,387 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.diagnosis_wf.prep_scan_data_node".
+250227-05:31:55,624 nipype.workflow INFO:
+	 [Job 32] Completed (analysis_main_wf.diagnosis_wf.prep_scan_data_node).
+250227-05:31:55,632 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 1 jobs ready. Free memory (GB): 56.28/56.28, Free processors: 6/6.
+250227-05:31:55,684 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.diagnosis_wf.diagnosis_split_joinnode" in "/data/analysis_out/analysis_main_wf/diagnosis_wf/diagnosis_split_joinnode".
+250227-05:31:57,625 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 0 jobs ready. Free memory (GB): 53.28/56.28, Free processors: 3/6.
+                     Currently running:
+                       * analysis_main_wf.diagnosis_wf.diagnosis_split_joinnode
+250227-05:31:58,14 nipype.workflow INFO:
+	 [Node] Running "diagnosis_split_joinnode" ("nipype.interfaces.utility.base.IdentityInterface")
+250227-05:31:58,786 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.diagnosis_wf.diagnosis_split_joinnode".
+250227-05:31:59,628 nipype.workflow INFO:
+	 [Job 33] Completed (analysis_main_wf.diagnosis_wf.diagnosis_split_joinnode).
+250227-05:31:59,639 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 1 jobs ready. Free memory (GB): 56.28/56.28, Free processors: 6/6.
+250227-05:31:59,690 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.diagnosis_wf.DatasetDiagnosis" in "/data/analysis_out/analysis_main_wf/diagnosis_wf/DatasetDiagnosis".
+250227-05:32:01,527 nipype.workflow INFO:
+	 [Node] Running "DatasetDiagnosis" ("rabies.analysis_pkg.diagnosis_pkg.interfaces.DatasetDiagnosis")
+250227-05:32:01,630 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 0 jobs ready. Free memory (GB): 53.28/56.28, Free processors: 3/6.
+                     Currently running:
+                       * analysis_main_wf.diagnosis_wf.DatasetDiagnosis
+250227-05:32:01,866 nipype.workflow WARNING:
+	 Singular matrix error when computing KDE. Density won't be shown.
+250227-05:32:01,937 nipype.workflow WARNING:
+	 Singular matrix error when computing KDE. Density won't be shown.
+250227-05:32:01,966 nipype.workflow WARNING:
+	 Singular matrix error when computing KDE. Density won't be shown.
+250227-05:32:01,996 nipype.workflow WARNING:
+	 Singular matrix error when computing KDE. Density won't be shown.
+250227-05:32:10,447 nipype.workflow WARNING:
+	 Singular matrix error when computing KDE. Density won't be shown.
+250227-05:32:10,466 nipype.workflow WARNING:
+	 Singular matrix error when computing KDE. Density won't be shown.
+250227-05:32:10,479 nipype.workflow WARNING:
+	 Singular matrix error when computing KDE. Density won't be shown.
+250227-05:32:10,535 nipype.workflow WARNING:
+	 Singular matrix error when computing KDE. Density won't be shown.
+250227-05:32:10,562 nipype.workflow WARNING:
+	 Singular matrix error when computing KDE. Density won't be shown.
+250227-05:32:10,593 nipype.workflow WARNING:
+	 Singular matrix error when computing KDE. Density won't be shown.
+250227-05:32:18,220 nipype.workflow WARNING:
+	 Singular matrix error when computing KDE. Density won't be shown.
+250227-05:32:18,237 nipype.workflow WARNING:
+	 Singular matrix error when computing KDE. Density won't be shown.
+250227-05:32:18,256 nipype.workflow WARNING:
+	 Singular matrix error when computing KDE. Density won't be shown.
+250227-05:32:18,278 nipype.workflow WARNING:
+	 Singular matrix error when computing KDE. Density won't be shown.
+250227-05:32:18,331 nipype.workflow WARNING:
+	 Singular matrix error when computing KDE. Density won't be shown.
+250227-05:32:18,358 nipype.workflow WARNING:
+	 Singular matrix error when computing KDE. Density won't be shown.
+250227-05:32:18,387 nipype.workflow WARNING:
+	 Singular matrix error when computing KDE. Density won't be shown.
+250227-05:32:27,416 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.diagnosis_wf.DatasetDiagnosis".
+250227-05:32:27,656 nipype.workflow INFO:
+	 [Job 34] Completed (analysis_main_wf.diagnosis_wf.DatasetDiagnosis).
+250227-05:32:27,664 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 3 jobs ready. Free memory (GB): 56.28/56.28, Free processors: 6/6.
+250227-05:32:27,716 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.data_diagnosis_datasink" in "/data/analysis_out/analysis_main_wf/_split_name_sub-10_ses-1_bold/data_diagnosis_datasink".
+250227-05:32:27,719 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.data_diagnosis_datasink" in "/data/analysis_out/analysis_main_wf/_split_name_sub-12_ses-1_bold/data_diagnosis_datasink".
+250227-05:32:27,724 nipype.workflow INFO:
+	 [Node] Setting-up "analysis_main_wf.data_diagnosis_datasink" in "/data/analysis_out/analysis_main_wf/_split_name_sub-9_ses-1_bold/data_diagnosis_datasink".
+250227-05:32:28,709 nipype.workflow INFO:
+	 [Node] Running "data_diagnosis_datasink" ("nipype.interfaces.io.DataSink")
+250227-05:32:28,709 nipype.workflow INFO:
+	 [Node] Running "data_diagnosis_datasink" ("nipype.interfaces.io.DataSink")
+250227-05:32:28,710 nipype.workflow INFO:
+	 [Node] Running "data_diagnosis_datasink" ("nipype.interfaces.io.DataSink")
+250227-05:32:29,659 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 0 jobs ready. Free memory (GB): 55.68/56.28, Free processors: 3/6.
+                     Currently running:
+                       * analysis_main_wf.data_diagnosis_datasink
+                       * analysis_main_wf.data_diagnosis_datasink
+                       * analysis_main_wf.data_diagnosis_datasink
+250227-05:32:30,91 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.data_diagnosis_datasink".
+250227-05:32:30,132 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.data_diagnosis_datasink".
+250227-05:32:30,133 nipype.workflow INFO:
+	 [Node] Finished "analysis_main_wf.data_diagnosis_datasink".
+250227-05:32:31,660 nipype.workflow INFO:
+	 [Job 35] Completed (analysis_main_wf.data_diagnosis_datasink).
+250227-05:32:31,669 nipype.workflow INFO:
+	 [Job 36] Completed (analysis_main_wf.data_diagnosis_datasink).
+250227-05:32:31,675 nipype.workflow INFO:
+	 [Job 37] Completed (analysis_main_wf.data_diagnosis_datasink).
+250227-05:32:31,682 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 0 jobs ready. Free memory (GB): 56.28/56.28, Free processors: 6/6.
